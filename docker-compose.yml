@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: coldchain-pg
+    environment:
+      POSTGRES_DB: coldchain
+      POSTGRES_USER: coldchain
+      POSTGRES_PASSWORD: coldchain123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U coldchain -d coldchain"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: coldchain-ollama
+    # Windows 常保留 11368-11567，11434 无法绑定，改用宿主机 12434
+    ports:
+      - "12434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    # RTX 4060 8GB：推理用 3B 模型，训练后 import 自定义模型
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+volumes:
+  pg_data:
+  ollama_data:

@@ -1,0 +1,2 @@
+# 将冷链行业 PDF 放入此目录后执行：
+#   python scripts/ingest_all.py

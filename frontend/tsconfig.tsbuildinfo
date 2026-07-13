@@ -1,0 +1,1 @@
+{"root":["./src/main.ts","./src/vite-env.d.ts","./src/api/client.ts","./src/composables/usesse.ts","./src/app.vue","./src/components/avatarpanel.vue","./src/components/chatwidget.vue","./src/components/docmanager.vue","./src/components/messagelist.vue","./src/components/modelswitch.vue","./src/components/sourcepanel.vue"],"version":"5.7.3"}

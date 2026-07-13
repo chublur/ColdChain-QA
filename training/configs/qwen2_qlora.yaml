@@ -1,0 +1,19 @@
+# QLoRA 训练超参（RTX 4060 8GB）
+base_model: Qwen/Qwen2.5-3B-Instruct
+
+lora:
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules: [q_proj, v_proj, k_proj, o_proj]
+
+training:
+  epochs: 3
+  batch_size: 1
+  grad_accum: 8
+  learning_rate: 2.0e-4
+  max_seq_len: 1536
+  quantization: 4bit
+
+# 有效 batch = 1 × 8 = 8
+# 预计显存占用 ~6GB，4060 8GB 可跑
