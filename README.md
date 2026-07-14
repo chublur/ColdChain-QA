@@ -55,8 +55,11 @@ curl -N "http://localhost:8000/api/ask/stream?question=疫苗运输温度范围"
 pip install -r requirements-train.txt
 python training/export_dataset.py --input data/sft/qa_pairs.json
 python training/train_lora.py
+python training/merge_lora.py
 # 详见 docs/DEVELOPMENT_FLOW.md 阶段 4
 ```
+
+多次微调指标对比见 **[docs/FINETUNE_RESULTS.md](docs/FINETUNE_RESULTS.md)**（Run1 epochs=3 vs Run2 epochs=2）。
 
 ## 项目结构
 

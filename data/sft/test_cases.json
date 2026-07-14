@@ -68,5 +68,215 @@
     "expected_answer": "冷冻食品运输温度应不高于-18°C。",
     "category": "temperature",
     "check_temp": true
+  },
+  {
+    "id": "cc-011",
+    "question": "什么是主动冷链和被动冷链？",
+    "expected_answer": "主动冷链靠持续制冷设备，被动冷链靠蓄冷包装在验证时长内维持温度。",
+    "category": "concept",
+    "check_temp": false
+  },
+  {
+    "id": "cc-012",
+    "question": "冷库温度报警触发后应如何应急？",
+    "expected_answer": "立即核查原因并按应急预案处置，必要时转移产品，同时启动偏差调查。",
+    "category": "sop",
+    "check_temp": false
+  },
+  {
+    "id": "cc-013",
+    "question": "冷藏药品为什么要避免冻结？",
+    "expected_answer": "部分冷藏药品冻结后可能失效或产生安全风险，回温后未必可恢复。",
+    "category": "concept",
+    "check_temp": false
+  },
+  {
+    "id": "cc-014",
+    "question": "蓄冷箱用于医药冷链有什么要求？",
+    "expected_answer": "蓄冷箱须经验证确定配置与时长，使用前处理好蓄冷剂并放置温度记录仪。",
+    "category": "equipment",
+    "check_temp": false
+  },
+  {
+    "id": "cc-015",
+    "question": "冷鲜肉运输温度大概是多少？",
+    "expected_answer": "冷鲜肉通常在0～4°C条件下运输。",
+    "category": "temperature",
+    "check_temp": true
+  },
+  {
+    "id": "cc-016",
+    "question": "温度监控数据缺失一段怎么办？",
+    "expected_answer": "数据缺失视为潜在断链风险，应隔离相关批次并调查原因后由质量部评估。",
+    "category": "sop",
+    "check_temp": false
+  },
+  {
+    "id": "cc-017",
+    "question": "GSP是什么？与冷链有什么关系？",
+    "expected_answer": "GSP是药品经营质量管理规范，对冷藏冷冻药品全环节提出温控与管理要求。",
+    "category": "regulation",
+    "check_temp": false
+  },
+  {
+    "id": "cc-018",
+    "question": "疫苗运输能否使用普通快递？",
+    "expected_answer": "疫苗一般不得使用无法保障温控与监控的普通快递运输。",
+    "category": "regulation",
+    "check_temp": false
+  },
+  {
+    "id": "cc-019",
+    "question": "冷链车装了应-18°C的冻品却设定2-8°C可以吗？",
+    "expected_answer": "不可以，冻品与冷藏品温区不同，严禁混装。",
+    "category": "sop",
+    "check_temp": true
+  },
+  {
+    "id": "cc-020",
+    "question": "胰岛素类冷藏药品的贮存温度是多少？",
+    "expected_answer": "胰岛素类冷藏药品通常应贮存在2-8°C，并避免冻结。",
+    "category": "temperature",
+    "check_temp": true
+  },
+  {
+    "id": "cc-021",
+    "question": "冷藏车发运前应完成哪些检查？",
+    "expected_answer": "发运前应完成预冷、温控设备检查、门封与机组检查，并核对温区与产品要求一致。",
+    "category": "sop",
+    "check_temp": false
+  },
+  {
+    "id": "cc-022",
+    "question": "电子温度记录仪电池耗尽有什么风险？",
+    "expected_answer": "电池耗尽会导致监测中断与数据缺失，形成潜在断链风险。",
+    "category": "equipment",
+    "check_temp": false
+  },
+  {
+    "id": "cc-023",
+    "question": "什么是温度偏移（excursion）？",
+    "expected_answer": "温度偏移是指产品环境温度超出规定储存范围（含过热或冻结）。",
+    "category": "concept",
+    "check_temp": false
+  },
+  {
+    "id": "cc-024",
+    "question": "医药冷链承运商审核关注哪些要点？",
+    "expected_answer": "关注资质、车辆验证、设备校准、人员培训、应急预案与偏差历史。",
+    "category": "regulation",
+    "check_temp": false
+  },
+  {
+    "id": "cc-025",
+    "question": "冷冻食品和冰淇淋运输温度要求？",
+    "expected_answer": "冷冻食品及速冻食品运输温度应不高于-18°C。",
+    "category": "temperature",
+    "check_temp": true
+  },
+  {
+    "id": "cc-026",
+    "question": "只凭司机口头说正常能否免除温控记录？",
+    "expected_answer": "不可以，必须保留仪器温控记录，口头说明不能替代。",
+    "category": "regulation",
+    "check_temp": false
+  },
+  {
+    "id": "cc-027",
+    "question": "冷库应配备哪些温控监测设施？",
+    "expected_answer": "应配备连续自动温控监测记录系统、合理测点布局以及超温报警与断电保护。",
+    "category": "equipment",
+    "check_temp": false
+  },
+  {
+    "id": "cc-028",
+    "question": "什么是冷链最后一公里？",
+    "expected_answer": "最后一公里是末端配送环节，因装卸与包装因素常为断链高风险段。",
+    "category": "concept",
+    "check_temp": false
+  },
+  {
+    "id": "cc-029",
+    "question": "开箱验收冷藏药品时应注意什么？",
+    "expected_answer": "核对票货一致与包装完好，验证到货温度在2-8°C范围内，异常则拒收或隔离。",
+    "category": "sop",
+    "check_temp": true
+  },
+  {
+    "id": "cc-030",
+    "question": "血液制品冷链温度一般要求多少？",
+    "expected_answer": "血液制品冷链温度一般要求控制在2-8°C并全程温控。",
+    "category": "temperature",
+    "check_temp": true
+  },
+  {
+    "id": "cc-031",
+    "question": "冷链运输途中断电怎么办？",
+    "expected_answer": "立即启动应急预案，评估温升风险，更换车辆或启用蓄冷，并完整记录异常区间。",
+    "category": "general",
+    "check_temp": false
+  },
+  {
+    "id": "cc-032",
+    "question": "冷链产品退货如何处理？",
+    "expected_answer": "核实退货原因与温控合规性，不合规或破损品不得再销售，按待验/不合格处理。",
+    "category": "general",
+    "check_temp": false
+  },
+  {
+    "id": "cc-033",
+    "question": "冷藏药品装车摆放有什么要求？",
+    "expected_answer": "装车须保证空气循环，避免堵风口，稳固堆码并禁止不同温区混装。",
+    "category": "general",
+    "check_temp": false
+  },
+  {
+    "id": "cc-034",
+    "question": "冷藏员交接班要做哪些记录？",
+    "expected_answer": "交接班须核对库温、报警、在库与待验品状态并签字确认。",
+    "category": "general",
+    "check_temp": false
+  },
+  {
+    "id": "cc-035",
+    "question": "如何判定冷链偏差是否影响产品质量？",
+    "expected_answer": "应依据稳定性数据、超标幅度与时长等综合评估，必要时检验或咨询厂家。",
+    "category": "general",
+    "check_temp": false
+  },
+  {
+    "id": "cc-036",
+    "question": "冷库应该配备哪些温控监测设施？",
+    "expected_answer": "应配备连续自动温控监测记录系统、合理测点布局以及超温报警与断电保护。",
+    "category": "general",
+    "check_temp": false
+  },
+  {
+    "id": "cc-037",
+    "question": "冷藏车验证通常测哪些项目？",
+    "expected_answer": "通常测空载/满载温度分布、开门温升、稳定性与报警等，形成验证报告。",
+    "category": "general",
+    "check_temp": false
+  },
+  {
+    "id": "cc-038",
+    "question": "温度探头应放置在什么位置？",
+    "expected_answer": "探头应放在能代表产品环境温度的位置，避免紧贴出风口。",
+    "category": "general",
+    "check_temp": false
+  },
+  {
+    "id": "cc-039",
+    "question": "备用发电机对冷库有多重要？",
+    "expected_answer": "备用电源对保障断电期间制冷延续至关重要，是冷库应急能力的关键。",
+    "category": "general",
+    "check_temp": false
+  },
+  {
+    "id": "cc-040",
+    "question": "电子温度记录仪电池耗尽会有什么风险？",
+    "expected_answer": "电池耗尽会导致监测中断与数据缺失，形成潜在断链风险。",
+    "category": "general",
+    "check_temp": false
   }
 ]

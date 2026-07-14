@@ -9,6 +9,7 @@ venv/
 
 # 数据与缓存
 cache/
+.cache/
 models/
 data/raw/*.pdf
 data/raw/*.docx

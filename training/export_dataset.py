@@ -1,8 +1,11 @@
 """从 chunks + QA 对导出 LoRA SFT 训练数据。"""
 import json
 import logging
+import sys
 from pathlib import Path
 from typing import List, Dict, Any
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.rag.prompt import SYSTEM_PROMPT
 

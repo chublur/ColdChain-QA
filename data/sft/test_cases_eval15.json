@@ -1,0 +1,107 @@
+[
+  {
+    "id": "cc-001",
+    "question": "疫苗冷链运输的温控范围是多少？",
+    "expected_answer": "疫苗冷链运输温度应控制在2-8°C范围内。",
+    "category": "temperature",
+    "check_temp": true
+  },
+  {
+    "id": "cc-002",
+    "question": "什么是冷链断链？",
+    "expected_answer": "冷链断链是指冷藏冷冻药品在储运过程中温度超出规定范围，导致温控链条中断。",
+    "category": "concept",
+    "check_temp": false
+  },
+  {
+    "id": "cc-003",
+    "question": "冷藏药品运输途中温度超标至12°C持续30分钟应如何处理？",
+    "expected_answer": "应立即隔离该批次药品，启动偏差调查，评估是否按不合格品处理。",
+    "category": "sop",
+    "check_temp": true
+  },
+  {
+    "id": "cc-004",
+    "question": "冷藏车和冷冻车的温区区别是什么？",
+    "expected_answer": "冷藏车温区通常为2-8°C，冷冻车温区通常为-15°C以下或-18°C以下。",
+    "category": "equipment",
+    "check_temp": true
+  },
+  {
+    "id": "cc-005",
+    "question": "温度记录仪的校准周期是多久？",
+    "expected_answer": "温度记录仪应定期校准，一般每年至少校准一次。",
+    "category": "equipment",
+    "check_temp": false
+  },
+  {
+    "id": "cc-006",
+    "question": "收货时发现冷藏药品温度超标，验收员应怎么做？",
+    "expected_answer": "应拒收或隔离待查，记录温度超标情况，通知质量负责人启动偏差调查。",
+    "category": "sop",
+    "check_temp": false
+  },
+  {
+    "id": "cc-007",
+    "question": "GSP对冷藏药品储存温度有什么要求？",
+    "expected_answer": "冷藏药品应储存在2-8°C的环境中，并配备连续温度监测和记录系统。",
+    "category": "regulation",
+    "check_temp": true
+  },
+  {
+    "id": "cc-008",
+    "question": "生物制品冷链运输有哪些特殊要求？",
+    "expected_answer": "生物制品对温度更为敏感，需使用经过验证的冷藏设备，全程温度监控并留存记录。",
+    "category": "regulation",
+    "check_temp": false
+  },
+  {
+    "id": "cc-009",
+    "question": "冷库验证中的IQ、OQ、PQ分别指什么？",
+    "expected_answer": "IQ是安装确认，OQ是运行确认，PQ是性能确认，用于验证冷链设备符合使用要求。",
+    "category": "equipment",
+    "check_temp": false
+  },
+  {
+    "id": "cc-010",
+    "question": "冷冻食品冷链运输温度要求是多少？",
+    "expected_answer": "冷冻食品运输温度应不高于-18°C。",
+    "category": "temperature",
+    "check_temp": true
+  },
+  {
+    "id": "cc-011",
+    "question": "什么是主动冷链和被动冷链？",
+    "expected_answer": "主动冷链靠持续制冷设备，被动冷链靠蓄冷包装在验证时长内维持温度。",
+    "category": "concept",
+    "check_temp": false
+  },
+  {
+    "id": "cc-012",
+    "question": "冷库温度报警触发后应如何应急？",
+    "expected_answer": "立即核查原因并按应急预案处置，必要时转移产品，同时启动偏差调查。",
+    "category": "sop",
+    "check_temp": false
+  },
+  {
+    "id": "cc-013",
+    "question": "冷藏药品为什么要避免冻结？",
+    "expected_answer": "部分冷藏药品冻结后可能失效或产生安全风险，回温后未必可恢复。",
+    "category": "concept",
+    "check_temp": false
+  },
+  {
+    "id": "cc-014",
+    "question": "蓄冷箱用于医药冷链有什么要求？",
+    "expected_answer": "蓄冷箱须经验证确定配置与时长，使用前处理好蓄冷剂并放置温度记录仪。",
+    "category": "equipment",
+    "check_temp": false
+  },
+  {
+    "id": "cc-015",
+    "question": "冷鲜肉运输温度大概是多少？",
+    "expected_answer": "冷鲜肉通常在0～4°C条件下运输。",
+    "category": "temperature",
+    "check_temp": true
+  }
+]

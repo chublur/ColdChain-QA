@@ -7,7 +7,7 @@ services:
       POSTGRES_USER: coldchain
       POSTGRES_PASSWORD: coldchain123
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
       - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql

@@ -71,21 +71,38 @@ class EvalRunner:
     def compare(self, output_path: Optional[Path] = None) -> Dict[str, Any]:
         """对比 base vs lora。"""
         base_result = self.run(model="base")
+        # 本地 transformers 推理时需释放显存再加载 lora
+        try:
+            from src.llm.local_peft import clear_local_llm_cache
+
+            clear_local_llm_cache()
+        except Exception:
+            pass
         lora_result = self.run(model="lora")
+
+        metric_keys = [
+            "accuracy",
+            "avg_semantic",
+            "avg_faithfulness",
+            "avg_temp_accuracy",
+            "avg_regulation_cite",
+            "avg_format",
+            "avg_latency_ms",
+        ]
+        improvement = {}
+        for key in metric_keys:
+            base_v = base_result.get(key, 0) or 0
+            lora_v = lora_result.get(key, 0) or 0
+            # 延迟：负向指标，提升用 base - lora（越小越好）
+            if key == "avg_latency_ms":
+                improvement[key] = round(base_v - lora_v, 4)
+            else:
+                improvement[key] = round(lora_v - base_v, 4)
 
         comparison = {
             "base": base_result,
             "lora": lora_result,
-            "improvement": {
-                "accuracy": round(lora_result.get("accuracy", 0) - base_result.get("accuracy", 0), 4),
-                "avg_semantic": round(lora_result.get("avg_semantic", 0) - base_result.get("avg_semantic", 0), 4),
-                "avg_temp_accuracy": round(
-                    lora_result.get("avg_temp_accuracy", 0) - base_result.get("avg_temp_accuracy", 0), 4
-                ),
-                "avg_regulation_cite": round(
-                    lora_result.get("avg_regulation_cite", 0) - base_result.get("avg_regulation_cite", 0), 4
-                ),
-            },
+            "improvement": improvement,
         }
 
         if output_path:

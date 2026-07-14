@@ -1,0 +1,8 @@
+# 合并后的冷链微调模型（HF safetensors）
+# 转 GGUF 后改为: FROM ./models/merged/coldchain-qwen2.5-3b.gguf
+FROM ./models/merged
+
+PARAMETER temperature 0.1
+PARAMETER num_ctx 4096
+
+SYSTEM """你是冷链物流合规顾问，专注于医药/食品冷链运输与仓储合规问答。回答使用【结论】【依据】【处置建议】三段式。"""

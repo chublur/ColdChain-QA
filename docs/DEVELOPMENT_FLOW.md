@@ -432,7 +432,14 @@ python scripts/evaluate.py --model compare
 
 ### 8.3 简历用量化指标
 
-从 `eval_report.json` 的 `improvement` 字段提取：
+从 `eval_report.json` / `cache/finetune_runs/*.json` 的 `improvement` 字段提取。
+
+**已完成多轮对比**（15 题固定集，详见 **[FINETUNE_RESULTS.md](./FINETUNE_RESULTS.md)**）：
+
+| 轮次 | epochs | accuracy Δ | temp Δ | 法规引用 Δ | 备注 |
+|------|--------|------------|--------|------------|------|
+| Run1 | 3 | -33.3% | **+16.7%** | +6.7% | 温控更准，语义掉点大 |
+| Run2 | 2 | **-6.7%** | 0 | +6.7% | 语义掉点收窄，略损格式 |
 
 | 指标 | 含义 | 目标提升 |
 |------|------|----------|
