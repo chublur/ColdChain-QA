@@ -8,7 +8,7 @@ import ModelSwitch from './components/ModelSwitch.vue'
 import DocManager from './components/DocManager.vue'
 import AvatarPanel from './components/AvatarPanel.vue'
 
-const model = ref<ModelType>('base')
+const model = ref<ModelType>('lora')
 const docType = ref('')
 const health = ref<HealthStatus | null>(null)
 const speaking = ref(false)

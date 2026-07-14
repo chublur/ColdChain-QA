@@ -132,7 +132,7 @@ async def ask_stream(
 @app.get("/api/ask/stream")
 async def ask_stream_get(
     question: str = Query(..., min_length=1),
-    model: Literal["base", "lora"] = "base",
+    model: Literal["base", "lora"] = "lora",
     doc_type: Optional[str] = Query(None),
     x_api_key: Optional[str] = Header(None),
     api_key: Optional[str] = Query(None),

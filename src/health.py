@@ -26,8 +26,19 @@ def check_postgres() -> Dict[str, Any]:
 
 def check_ollama() -> Dict[str, Any]:
     """检查 Ollama 服务及模型就绪状态。"""
+    import os
+
+    # 本地 transformers 推理时不阻塞等 Ollama（常导致前端健康检查 pending）
+    if os.environ.get("USE_LOCAL_LLM", "").strip().lower() in ("1", "true", "yes"):
+        return {
+            "status": "skipped",
+            "message": "USE_LOCAL_LLM=1，跳过 Ollama 检查",
+            "base_ready": True,
+            "lora_ready": True,
+        }
+
     try:
-        with httpx.Client(timeout=5.0) as client:
+        with httpx.Client(timeout=1.5) as client:
             resp = client.get(f"{settings.OLLAMA_BASE_URL}/api/tags")
             resp.raise_for_status()
             models = [m.get("name", "") for m in resp.json().get("models", [])]
@@ -46,11 +57,15 @@ def check_ollama() -> Dict[str, Any]:
 
 def get_health_status() -> Dict[str, Any]:
     """汇总后端依赖健康状态。"""
+    import os
+
     postgres = check_postgres()
     ollama = check_ollama()
     kb = get_stats() if postgres["status"] == "ok" else {"documents": 0, "chunks": 0}
 
-    services_ok = postgres["status"] == "ok" and ollama["status"] == "ok"
+    use_local = os.environ.get("USE_LOCAL_LLM", "").strip().lower() in ("1", "true", "yes")
+    llm_ok = use_local or ollama["status"] == "ok"
+    services_ok = postgres["status"] == "ok" and llm_ok
     kb_ready = kb.get("chunks", 0) > 0
 
     return {

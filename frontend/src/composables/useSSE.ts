@@ -22,7 +22,7 @@ export async function askStream(
   options: AskStreamOptions,
   handlers: SSEHandlers,
 ): Promise<void> {
-  const { question, model = 'base', docType, signal } = options
+  const { question, model = 'lora', docType, signal } = options
 
   const body: Record<string, string> = { question, model }
   if (docType) body.doc_type = docType
